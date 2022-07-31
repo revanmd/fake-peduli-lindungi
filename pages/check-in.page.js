@@ -1,4 +1,40 @@
+import Link from "next/link"
+import { useEffect, useState } from "react"
+
+export const GetCurrentDate = () => {
+    const currentdate = new Date()
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+    return currentdate.getDate() + " " + monthNames[currentdate.getMonth()] + " " + currentdate.getFullYear()
+}
+
+export const GetTimeAMPM = () => {
+    const date = new Date()
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    let strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
+
 const CheckIn = () => {
+
+    const [Nama, setNama] = useState()
+    const [Lokasi, setLokasi] = useState()
+    const [Pengunjung, setPengunjung] = useState()
+    const [Total, setTotal] = useState()
+  
+    useEffect(()=>{
+      setNama(localStorage.getItem('nama'))
+      setLokasi(localStorage.getItem('lokasi'))
+      setPengunjung(localStorage.getItem('pengunjung'))
+      setTotal(localStorage.getItem('total'))
+    },[])
+
+
     return (
         <div style={{
             height:'100vh',
@@ -12,7 +48,11 @@ const CheckIn = () => {
                     marginLeft:'10px'
                 }}
             >
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#074973" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <Link
+                    href="/"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#074973" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </Link>
             </div>
             <div
                 style={{
@@ -89,7 +129,7 @@ const CheckIn = () => {
                                 fontWeight:'bold',
                             }}
                         >
-                            Puri Mansion Apartement
+                            {Lokasi}
                         </span>
                     </div>
                     <div style={{
@@ -111,7 +151,7 @@ const CheckIn = () => {
                                 marginLeft:'5px'
                             }}
                         >
-                            2124
+                            {Pengunjung}
                         </span>
                         <span
                             style={{
@@ -119,7 +159,8 @@ const CheckIn = () => {
                                 fontWeight:500,
                             }}
                         >
-                            /45000
+                            /
+                            {Total}
                         </span>
                     </div>
                     <div
@@ -144,7 +185,7 @@ const CheckIn = () => {
                                 }}
                                 xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 24 24" fill="none" stroke="#080808" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                             <span>
-                                24 Jul 2022
+                                {GetCurrentDate()}
                             </span>
                         </div>
                         <div
@@ -162,7 +203,7 @@ const CheckIn = () => {
                                 }}
                                 xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 24 24" fill="none" stroke="#080808" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                             <span>
-                                07:14 PM
+                                {GetTimeAMPM()}
                             </span>
                         </div>
                     </div>
@@ -184,7 +225,7 @@ const CheckIn = () => {
                                 color:'white'
                             }}
                         >
-                            Revan Muhammad Dafa
+                            {Nama}
                         </button>        
                     </div>
 

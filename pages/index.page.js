@@ -57,6 +57,7 @@ export default function Home() {
           </label>
           <input
             type='text'
+            value={Nama}
             onChange={(e)=>{
               setNama(e.target.value)
             }}
@@ -70,6 +71,7 @@ export default function Home() {
           </label>
           <input
             type='text'
+            value={Lokasi}
             onChange={(e)=>{
               setLokasi(e.target.value)
             }}
@@ -83,6 +85,7 @@ export default function Home() {
           </label>
           <input
             type='text'
+            value={Pengunjung}
             onChange={(e)=>{
               setPengunjung(e.target.value)
             }}
@@ -96,6 +99,7 @@ export default function Home() {
           </label>
           <input
             type='text'
+            value={Total}
             onChange={(e)=>{
               setTotal(e.target.value)
             }}

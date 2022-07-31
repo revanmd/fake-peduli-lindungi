@@ -107,7 +107,8 @@ const CheckIn = () => {
                             marginRight:'auto',
                             display:'block',
                             fontSize:'12px',
-                            fontWeight:500
+                            fontWeight:500,
+                            color:'#080808'
                         }}
                     >
                         Check-In Sendiri
@@ -127,6 +128,7 @@ const CheckIn = () => {
                             style={{
                                 fontSize:'18px',
                                 fontWeight:'bold',
+                                color:'#080808'
                             }}
                         >
                             {Lokasi}
@@ -140,6 +142,7 @@ const CheckIn = () => {
                             style={{
                                 fontSize:'13px',
                                 fontWeight:500,
+                                color:'#080808'
                             }}
                         >
                             Total Keramaian:
@@ -148,7 +151,8 @@ const CheckIn = () => {
                             style={{
                                 fontSize:'13px',
                                 fontWeight:700,
-                                marginLeft:'5px'
+                                marginLeft:'5px',
+                                color:'#080808'
                             }}
                         >
                             {Pengunjung}
@@ -157,6 +161,7 @@ const CheckIn = () => {
                             style={{
                                 fontSize:'13px',
                                 fontWeight:500,
+                                color:'#080808'
                             }}
                         >
                             /
@@ -174,7 +179,8 @@ const CheckIn = () => {
                             style={{
                                 width:'50%',
                                 display:'inline-block',
-                                textAlign:'center'
+                                textAlign:'center',
+                                color:'#080808'
                             }}
                         >   
                             <svg 
@@ -192,7 +198,8 @@ const CheckIn = () => {
                             style={{
                                 width:'50%',
                                 display:'inline-block',
-                                textAlign:'center'
+                                textAlign:'center',
+                                color:'#080808'
                             }}
                         >
                             <svg 

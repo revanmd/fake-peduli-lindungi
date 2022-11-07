@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 export const GetCurrentDate = () => {
     const currentdate = new Date()
-    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
     return currentdate.getDate() + " " + monthNames[currentdate.getMonth()] + " " + currentdate.getFullYear()
 }
